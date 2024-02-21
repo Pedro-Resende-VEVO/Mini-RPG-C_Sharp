@@ -12,4 +12,4 @@ Mudanças:
     Fazer Boss aparecer só no cenário final;
     Permitir finalização do jogo após derrotar o Boss.
 
-    teste
+    testea
