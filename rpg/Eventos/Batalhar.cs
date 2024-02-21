@@ -6,7 +6,6 @@ class Batalhar
     //Função de batalhar
     public static void batalhar(Personagem jogador, Monstro monstro)
     {
-        Console.WriteLine($"\nUm {monstro.nome} apareceu!");
         while (jogador.hp > 0 && monstro.hp > 0)
         {
             Console.WriteLine($"\n\nStatus\nHP: {jogador.hp}\nAtaque: {jogador.ataque}\nDefesa: {jogador.defesa}\nOuro: {jogador.ouro}\n\n");

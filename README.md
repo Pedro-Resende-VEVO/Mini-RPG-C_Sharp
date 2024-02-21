@@ -8,8 +8,7 @@ Mudanças:
     Itens da loja;
     Criar o terreno final;
     Definir a aparissão de monstro em missão qualquer;
+    Alteração na vida dos monstros
     Chance menor de monstro aparecer na transição de caminhos;
     Fazer Boss aparecer só no cenário final;
     Permitir finalização do jogo após derrotar o Boss.
-
-    teste

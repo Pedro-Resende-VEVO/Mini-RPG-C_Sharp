@@ -49,7 +49,6 @@ class Terreno
         Console.Write("\nAperte qualquer tecla para tentar completar essa missão");
         string sese = Console.ReadLine()!;
 
-        Console.WriteLine("\nUma criatura apareceu!");
         Monstro monstroEspecial = GeradorDeMonstros.CriarMonstro();
         Console.WriteLine($"\nUm {monstroEspecial.nome} selvagem apareceu!");
         Batalhar.batalhar(jogador, monstroEspecial);
