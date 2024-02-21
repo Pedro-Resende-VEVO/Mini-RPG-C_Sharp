@@ -115,7 +115,7 @@ class Jogo
         }
         else
         {
-            for (int i = 1; i <= terrenos.Count; i++)
+            for (int i = 1; i < terrenos.Count; i++)
             {
                 Console.WriteLine($"{i}. {terrenos[i].nome}");
             }
