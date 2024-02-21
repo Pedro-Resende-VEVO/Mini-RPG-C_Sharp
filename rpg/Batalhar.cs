@@ -45,24 +45,31 @@ class Batalhar
 
             string[] acoesMonstro = { "atacar", "defender" };
             string acaoMonstro = acoesMonstro[random.Next(acoesMonstro.Length)];
-
-            bool critico = random.NextDouble() < 0.3; // 30% de chance de acerto crítico
+            bool critico;
 
             if (acaoJogador == "1") // Ataque
             {
                 if (acaoMonstro == "atacar")
                 {
-                    int dano = CalcularDano(jogador, monstro, critico);
+                    critico = random.NextDouble() <= 0.3; // 30% de chance de acerto crítico
+
+                    double dano = CalcularDanoJog(jogador, monstro, critico);
                     Console.WriteLine($"Você causou {dano} de dano ao {monstro.nome}.");
                     monstro.hp -= dano;
 
-                    dano = CalcularDano(jogador, monstro);
+                    critico = random.NextDouble() <= 0.3; // 30% de chance de acerto crítico
+
+                    dano = CalcularDanoMonstr(jogador, monstro, critico);
                     Console.WriteLine($"{monstro.nome} te atacou e causou {dano} de dano.");
                     jogador.hp -= dano;
                 }
                 else // Monstro defende
                 {
-                    int dano = CalcularDano(jogador, monstro, critico);
+                    Console.WriteLine($"{monstro.nome} decide se defender e recebe menos dano");
+
+                    critico = random.NextDouble() <= 0.3; // 30% de chance de acerto crítico
+                    double dano = CalcularDanoJog(jogador, monstro, critico);
+                    dano *= 0.5;
                     Console.WriteLine($"Você causou {dano} de dano ao {monstro.nome}.");
                     monstro.hp -= dano;
                 }
@@ -73,14 +80,18 @@ class Batalhar
                 {
                     if (random.NextDouble() > 0.7) // 30% de chance de dodge bem-sucedida
                     {
-                        int dano = CalcularDano(jogador, monstro, critico);
+                        critico = random.NextDouble() <= 0.3; // 30% de chance de acerto crítico
+
+                        double dano = CalcularDanoJog(jogador, monstro, critico);
                         Console.WriteLine($"{monstro.nome} te atacou, mas você o atordoou e causou {dano} de dano ao {monstro.nome}.");
                         monstro.hp -= dano;
                         return;
                     }
                     else
                     {
-                        int dano = CalcularDano(jogador, monstro);
+                        critico = random.NextDouble() <= 0.3; // 30% de chance de acerto crítico
+
+                        double dano = CalcularDanoMonstr(jogador, monstro, critico);
                         Console.WriteLine($"{monstro.nome} te atacou, mas você errou o atordoamento e recebeu {dano} de dano.");
                         jogador.hp -= dano;
                     }
@@ -108,12 +119,22 @@ class Batalhar
     }
 
     //Função de calcular dano
-    static int CalcularDano(Personagem atacante, Monstro defensor, bool critico = false)
+    static double CalcularDanoJog(Personagem jogador, Monstro monstro, bool critico)
     {
-        int danoBase = atacante.ataque - defensor.defesa;
+        double danoBase = jogador.ataque - monstro.defesa;
         if (critico)
         {
-            danoBase += (int)(0.5 * atacante.ataque);
+            danoBase += (double)(0.5 * jogador.ataque);
+        }
+        return Math.Max(danoBase, 0);
+    }
+
+    static double CalcularDanoMonstr(Personagem jogador, Monstro monstro, bool critico)
+    {
+        double danoBase = monstro.ataque - jogador.defesa;
+        if (critico)
+        {
+            danoBase += (double)(0.5 * monstro.ataque);
         }
         return Math.Max(danoBase, 0);
     }

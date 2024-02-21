@@ -1,10 +1,10 @@
 class Personagem
 {
     public string nome;
-    public int hp;
-    public int ataque;
-    public int defesa;
-    public int ouro;
+    public double hp;
+    public double ataque;
+    public double defesa;
+    public double ouro;
     public List<string> inventario;
 
     public Personagem(string nome)
@@ -19,7 +19,7 @@ class Personagem
     // Distribuição inicial de pontos
     public void DistribuirAtributos()
     {
-        int pontos = 20;
+        double pontos = 20;
         while (pontos > 0)
         {
             Console.WriteLine($"\nPontos restantes: {pontos}");
@@ -28,13 +28,13 @@ class Personagem
             try
             {
                 Console.Write("Quantos pontos você deseja adicionar ao Ataque? ");
-                int ataque = Convert.ToInt32(Console.ReadLine());
+                double ataque = Convert.ToDouble(Console.ReadLine());
 
                 Console.Write("Quantos pontos você deseja adicionar à Defesa? ");
-                int defesa = Convert.ToInt32(Console.ReadLine());
+                double defesa = Convert.ToDouble(Console.ReadLine());
 
                 Console.Write("Quantos pontos você deseja adicionar ao HP? ");
-                int hp = Convert.ToInt32(Console.ReadLine());
+                double hp = Convert.ToDouble(Console.ReadLine());
 
                 if (ataque + defesa + hp <= pontos)
                 {

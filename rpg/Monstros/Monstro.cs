@@ -1,13 +1,13 @@
 public abstract class Monstro
     {
         public string nome;
-        public int hp;
-        public int ataque;
-        public int defesa;
-        public int recompensa;
-        public int ouro;
+        public double hp;
+        public double ataque;
+        public double defesa;
+        public double recompensa;
+        public double ouro;
 
-        public Monstro(string nome, int hp, int ataque, int defesa, int recompensa, int ouro)
+        public Monstro(string nome, double hp, double ataque, double defesa, double recompensa, double ouro)
         {
             this.nome = nome;
             this.hp = hp;
@@ -17,9 +17,9 @@ public abstract class Monstro
             this.ouro = ouro;
         }
 
-        public int Atacado(int poder)
+        public double Atacado(double poder)
         {
-            int dano = Math.Max(poder - this.defesa, 0);
+            double dano = Math.Max(poder - this.defesa, 0);
             this.hp -= dano;
             return dano;
         }

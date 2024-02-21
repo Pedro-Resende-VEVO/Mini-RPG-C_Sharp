@@ -29,4 +29,8 @@ public static class GeradorDeMonstros
                 throw new Exception("Tipo de monstro desconhecido."); // Para segurança, mas nunca deve chegar aqui devido ao range do Next()
         }
     }
+
+    public static Monstro Boss(){
+        return new Boss();
+    }
 }
