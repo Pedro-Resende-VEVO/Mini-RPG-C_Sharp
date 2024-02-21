@@ -56,7 +56,7 @@ class Jogo
                         }
                     }
                     lugarEscolhido.Missao(jogador);
-                    terrenos.Remove(lugarEscolhido); //Remove o lugar já passado da lista
+                    terrenos.Remove(lugarEscolhido); //Remove o lugar já passado da lista TESTE
                 }
                 else if (escolha == terrenos.Count + 1)
                 {
