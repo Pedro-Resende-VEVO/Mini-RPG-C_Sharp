@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/emmanuel/Documentos/teste_c#/rpg/rpg.csproj": {}
+    "c:\\Users\\pedro\\Downloads\\RPG Grau\\rpg\\rpg.csproj": {}
   },
   "projects": {
-    "/home/emmanuel/Documentos/teste_c#/rpg/rpg.csproj": {
+    "c:\\Users\\pedro\\Downloads\\RPG Grau\\rpg\\rpg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/emmanuel/Documentos/teste_c#/rpg/rpg.csproj",
+        "projectUniqueName": "c:\\Users\\pedro\\Downloads\\RPG Grau\\rpg\\rpg.csproj",
         "projectName": "rpg",
-        "projectPath": "/home/emmanuel/Documentos/teste_c#/rpg/rpg.csproj",
-        "packagesPath": "/home/emmanuel/.nuget/packages/",
-        "outputPath": "/home/emmanuel/Documentos/teste_c#/rpg/obj/",
+        "projectPath": "c:\\Users\\pedro\\Downloads\\RPG Grau\\rpg\\rpg.csproj",
+        "packagesPath": "C:\\Users\\pedro\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\pedro\\Downloads\\RPG Grau\\rpg\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/emmanuel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\pedro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/233/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

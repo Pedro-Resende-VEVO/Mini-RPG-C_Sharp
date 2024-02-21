@@ -9,11 +9,16 @@ class Jogo
     {
         Console.Write("Digite o nome do seu personagem: ");
         string nome = Console.ReadLine()!;
+        if (nome == "")
+        {
+            nome = "Desconhecido";
+        }
         Personagem jogador = new Personagem(nome);
         jogador.DistribuirAtributos();
 
         List<Terreno> terrenos = new List<Terreno>
         {
+            new Terreno("Área do Boss"),
             new Terreno("Floresta"),
             new Terreno("Montanha"),
             new Terreno("Caverna")
@@ -33,16 +38,26 @@ class Jogo
             {
                 if (escolha >= 1 && escolha <= terrenos.Count)
                 {
-                    Terreno lugarEscolhido = terrenos[escolha - 1];
-                    int chanceBatalha = random.Next(1, 3); // 50% de chance: 1 ou 2
+                    Terreno lugarEscolhido = terrenos[escolha];
+                    int chanceBatalha = random.Next(1, 4); // 33% de chance: 1 a 3
                     if (chanceBatalha == 1)
                     {
-                        
-                       Monstro monstro = GeradorDeMonstros.CriarMonstro();
-                        Console.WriteLine($"\nUm {monstro.nome} selvagem apareceu!");
+
+                        Monstro monstro = GeradorDeMonstros.CriarMonstro();
+                        Console.WriteLine($"\nUm {monstro.nome} apareceu no caminho!");
                         Batalhar.batalhar(jogador, monstro);
+
+                        if (monstro.hp <= 0)
+                        {
+                            jogador.hp += 20;
+                            jogador.ataque += 10;
+                            jogador.defesa += 10;
+                            Console.WriteLine("\nSeus atributos foram aumentados!");
+                            ExibirStatusDoJogador(jogador);
+                        }
                     }
                     lugarEscolhido.Missao(jogador);
+                    terrenos.Remove(lugarEscolhido); //Remove o lugar já passado da lista TESTE
                 }
                 else if (escolha == terrenos.Count + 1)
                 {
@@ -69,7 +84,7 @@ class Jogo
         }
         else
         {
-            Console.WriteLine("\nVocê escolheu sair. Fim de jogo!");
+            Console.WriteLine("\nFim de jogo!");
         }
     }
 
@@ -81,9 +96,19 @@ class Jogo
     private static void ExibirOpcoesDeTerreno(List<Terreno> terrenos)
     {
         Console.WriteLine("Onde você gostaria de ir?");
-        for (int i = 0; i < terrenos.Count; i++)
+        if (terrenos.Count == 2)
         {
-            Console.WriteLine($"{i + 1}. {terrenos[i].nome}");
+            for (int i = 0; i < terrenos.Count; i++)
+            {
+                Console.WriteLine($"{i}. {terrenos[i].nome}");
+            }
+        }
+        else
+        {
+            for (int i = 1; i < terrenos.Count; i++)
+            {
+                Console.WriteLine($"{i}. {terrenos[i].nome}");
+            }
         }
     }
 

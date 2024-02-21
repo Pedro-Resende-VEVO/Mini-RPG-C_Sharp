@@ -12,3 +12,18 @@
 /home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.pdb
 /home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.genruntimeconfig.cache
 /home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/ref/rpg.dll
+c:\Users\pedro\Downloads\RPG Grau\rpg\bin\Debug\net8.0\rpg.exe
+c:\Users\pedro\Downloads\RPG Grau\rpg\bin\Debug\net8.0\rpg.deps.json
+c:\Users\pedro\Downloads\RPG Grau\rpg\bin\Debug\net8.0\rpg.runtimeconfig.json
+c:\Users\pedro\Downloads\RPG Grau\rpg\bin\Debug\net8.0\rpg.dll
+c:\Users\pedro\Downloads\RPG Grau\rpg\bin\Debug\net8.0\rpg.pdb
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\rpg.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\rpg.AssemblyInfoInputs.cache
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\rpg.AssemblyInfo.cs
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\rpg.csproj.CoreCompileInputs.cache
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\rpg.sourcelink.json
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\rpg.dll
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\refint\rpg.dll
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\rpg.pdb
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\rpg.genruntimeconfig.cache
+c:\Users\pedro\Downloads\RPG Grau\rpg\obj\Debug\net8.0\ref\rpg.dll
