@@ -9,6 +9,9 @@ class Jogo
     {
         Console.Write("Digite o nome do seu personagem: ");
         string nome = Console.ReadLine()!;
+        if(nome == ""){
+            nome = "Desconhecido";
+        }
         Personagem jogador = new Personagem(nome);
         jogador.DistribuirAtributos();
 
@@ -24,6 +27,7 @@ class Jogo
         {
             ExibirStatusDoJogador(jogador);
             ExibirOpcoesDeTerreno(terrenos);
+            terrenos.Remove(terrenos[2]);
 
             Console.WriteLine($"{terrenos.Count + 1}. Cidade");
             Console.WriteLine($"{terrenos.Count + 2}. Sair");
@@ -41,8 +45,18 @@ class Jogo
                        Monstro monstro = GeradorDeMonstros.CriarMonstro();
                         Console.WriteLine($"\nUm {monstro.nome} selvagem apareceu!");
                         Batalhar.batalhar(jogador, monstro);
+
+                        if (monstro.hp <= 0)
+                        {
+                            jogador.hp += 20;
+                            jogador.ataque += 10;
+                            jogador.defesa += 10;
+                            Console.WriteLine("\nSeus atributos foram aumentados!");
+                            ExibirStatusDoJogador(jogador);
+                        }
                     }
                     lugarEscolhido.Missao(jogador);
+                    terrenos.Remove(lugarEscolhido); //Remove o lugar já passado da lista
                 }
                 else if (escolha == terrenos.Count + 1)
                 {

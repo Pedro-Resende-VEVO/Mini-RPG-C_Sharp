@@ -1,6 +1,5 @@
 public abstract class Monstro
     {
-        private static Random random = new Random();
         public string nome;
         public int hp;
         public int ataque;

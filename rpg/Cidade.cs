@@ -6,20 +6,30 @@ class Cidade
     {
         Console.WriteLine("\nBem-vindo à cidade!");
         bool sairDaLoja = false;
-        
+
         while (!sairDaLoja)
         {
-            Console.WriteLine("\n1. Comprar Poção de Cura (30 ouro)");
-            Console.WriteLine("2. Comprar Espada (50 ouro)");
-            Console.WriteLine("3. Comprar Escudo (40 ouro)");
-            Console.WriteLine("4. Comprar Armadura (80 ouro)");
-            Console.WriteLine("5. Sair da loja");
+            Console.WriteLine("\n1. Poção de Cura (15 ouro)");
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("2. Espada de Madeira (50 ouro)");
+            Console.WriteLine("3. Espada Longa (70 ouro)");
+            Console.WriteLine("4. Espada Flamejante (90 ouro)");
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("5. Escudo de Madeira (40 ouro)");
+            Console.WriteLine("6. Escudo Resistente (60 ouro)");
+            Console.WriteLine("7. Escudo de Magma (75 ouro)");
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("8. Armadura de Madeira(50 ouro)");
+            Console.WriteLine("9. Armadura de Ferro Polido(70 ouro)");
+            Console.WriteLine("10. Armadura Vulcânica(85 ouro)");
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("11. Sair da loja");
 
             Console.Write("\nO que você gostaria de fazer? ");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine()!;
             int escolha;
 
-            if (!int.TryParse(input, out escolha) || escolha < 1 || escolha > 5)
+            if (!int.TryParse(input, out escolha) || escolha < 1 || escolha > 11)
             {
                 Console.WriteLine("\nOpção inválida!");
                 continue;
@@ -28,18 +38,36 @@ class Cidade
             switch (escolha)
             {
                 case 1:
-                    ComprarItem(jogador, "Poção de Cura", 30);
+                    ComprarItem(jogador, "Poção de Cura", 15);
                     break;
                 case 2:
-                    ComprarItem(jogador, "Espada", 50);
+                    ComprarItem(jogador, "Espada de Mandeira", 50);
                     break;
                 case 3:
-                    ComprarItem(jogador, "Escudo", 40);
+                    ComprarItem(jogador, "Espada Longa", 70);
                     break;
                 case 4:
-                    ComprarItem(jogador, "Armadura", 80);
+                    ComprarItem(jogador, "Espada Flamejante", 90);
                     break;
                 case 5:
+                    ComprarItem(jogador, "Escudo de Madeira", 40);
+                    break;
+                case 6:
+                    ComprarItem(jogador, "Escudo Resistente", 60);
+                    break;
+                case 7:
+                    ComprarItem(jogador, "Escudo de Magma", 75);
+                    break;
+                case 8:
+                    ComprarItem(jogador, "Armadura de Madeira", 50);
+                    break;
+                case 9:
+                    ComprarItem(jogador, "Armadura de Ferro Polido", 70);
+                    break;
+                case 10:
+                    ComprarItem(jogador, "Armadura Vulcânica", 85);
+                    break;
+                case 11:
                     Console.WriteLine("\nAté logo!");
                     sairDaLoja = true;
                     break;

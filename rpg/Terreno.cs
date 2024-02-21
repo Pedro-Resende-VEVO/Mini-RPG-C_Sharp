@@ -1,19 +1,19 @@
 class Terreno
+{
+    public string nome;
+    public int missoesCompletas;
+    private static Random random = new Random();
+
+    public Terreno(string nome)
     {
-        public string nome;
-        public int missoesCompletas;
-        private static Random random = new Random();
+        this.nome = nome;
+        this.missoesCompletas = 0;
+    }
+    //Missões
 
-        public Terreno(string nome)
-        {
-            this.nome = nome;
-            this.missoesCompletas = 0;
-        }
-        //Missões
-
-        public void Missao(Personagem jogador)
-        {
-            List<string> missoes = new List<string>
+    public void Missao(Personagem jogador)
+    {
+        List<string> missoes = new List<string>
             {
                 "\nMulher desconhecida:\n -Minha filha sofre de uma doença terrível, por favor encontre uma planta para ajudar a curá-la\n",
                 "\nGarota desconhecida:\n Perdi meu cãozinho no horizonte, poderia me ajudar a encontrá-lo?\n",
@@ -28,50 +28,57 @@ class Terreno
                 "\nHomem desconhecido: Preciso cortar estas madeiras, mas é impossível sozinho, poderia me ajudar?",
             };
 
-            if (this.missoesCompletas < 15)
-            {
-                string missaoAtual = missoes[random.Next(missoes.Count)];
-                Console.WriteLine($"\nMissão: {missaoAtual}");
-                Console.Write("Você deseja tentar completar essa missão? (Sim/Não) ");
-                string escolha = Console.ReadLine().ToLower();
+        if (this.missoesCompletas < 15)
+        {
+            string missaoAtual = missoes[random.Next(missoes.Count)];
+            Console.WriteLine($"\nMissão: {missaoAtual}");
+            Console.Write("Você deseja tentar completar essa missão? (Sim/Não) ");
+            string escolha = Console.ReadLine()!.ToLower();
 
-                if (escolha == "sim")
+            if (escolha == "sim")
+            {
+                bool sucesso = random.NextDouble() > 0.3; // 70% de chance de sucesso
+                if (sucesso)
                 {
-                    bool sucesso = random.NextDouble() > 0.3; // 70% de chance de sucesso
-                    if (sucesso)
+                    Console.WriteLine("\nMissão completada com sucesso!");
+                    this.missoesCompletas++;
+                    int ouro = random.Next(5, 50);
+                    jogador.ouro += ouro;
+                    Console.WriteLine($"\nVocê ganhou {ouro} moedas de ouro!");
+                    if (this.missoesCompletas == random.Next(4, 15))    // 8.3% de chance de achar o Boss
                     {
-                        Console.WriteLine("\nMissão completada com sucesso!");
-                        this.missoesCompletas++;
-                        int ouro = random.Next(5, 20);
-                        jogador.ouro += ouro;
-                        Console.WriteLine($"\nVocê ganhou {ouro} moedas de ouro!");
-                        if (this.missoesCompletas == random.Next(4, 15))
+                        Console.WriteLine("\nUma criatura apareceu!");
+                        Monstro monstroEspecial = GeradorDeMonstros.CriarMonstro();
+                        Console.WriteLine($"\nUm {monstroEspecial.nome} selvagem apareceu!");
+                        Batalhar.batalhar(jogador, monstroEspecial);
+
+
+                        /*Console.WriteLine("\nUma criatura apareceu!");
+                        Monstro monstroEspecial = new Boss();
+                        Batalhar.batalhar(jogador, monstroEspecial);*/
+                        if (monstroEspecial.hp <= 0)
                         {
-                            Console.WriteLine("\nUma criatura especial apareceu!");
-                            Monstro monstroEspecial = new Boss();
-                            Batalhar.batalhar(jogador, monstroEspecial);
-                            if (monstroEspecial.hp <= 0)
-                            {
-                                jogador.hp += 20;
-                                jogador.ataque += 5;
-                                jogador.defesa += 5;
-                                Console.WriteLine("\nSeus atributos foram aumentados!");
-                            }
+                            jogador.hp += 20;
+                            jogador.ataque += 10;
+                            jogador.defesa += 10;
+                            Console.WriteLine("\nSeus atributos foram aumentados!");
                         }
-                    }
-                    else
-                    {
-                        Console.WriteLine("\nMissão falhou. Tente novamente mais tarde.");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\nTalvez da próxima vez!");
+                    Console.WriteLine("\nMissão falhou. Tente novamente mais tarde.");
                 }
             }
             else
             {
-                Console.WriteLine("\nVocê já completou todas as missões deste terreno!");
+                Console.WriteLine("\nTalvez da próxima vez!");
             }
         }
+        else
+        {
+            Console.WriteLine("\nVocê já completou todas as missões deste terreno!");
+            
+        }
     }
+}

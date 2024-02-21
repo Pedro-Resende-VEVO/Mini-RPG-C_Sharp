@@ -6,13 +6,13 @@ public static class GeradorDeMonstros
 
     public static Monstro CriarMonstro()
     {
-        int tipoMonstro = random.Next(0, 8); // Gera um número aleatório entre 0 e 7, correspondendo ao número de tipos de monstros
+        int tipoMonstro = random.Next(1, 8); // Gera um número aleatório entre 1 e 7, correspondendo ao número de tipos de monstros
         switch (tipoMonstro)
         {
             case 0:
-                return new Dragao();
-            case 1:
                 return new Boss();
+            case 1:
+                return new Dragao();
             case 2:
                 return new ElfoNegro();
             case 3:

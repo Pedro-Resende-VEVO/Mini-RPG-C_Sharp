@@ -1,6 +1,6 @@
 class Dragao : Monstro
 {
-    public Dragao() : base("Dragão", 300, 15, 5, 200, 200) { }
+    public Dragao() : base("Dragão Bebê", 200, 15, 5, 100, 100) { }
 
     public override Monstro EncontrarMonstro()
     {

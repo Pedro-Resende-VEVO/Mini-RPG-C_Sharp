@@ -10,11 +10,11 @@ class Batalhar
         while (jogador.hp > 0 && monstro.hp > 0)
         {
             Console.WriteLine($"\n\nStatus\nHP: {jogador.hp}\nAtaque: {jogador.ataque}\nDefesa: {jogador.defesa}\nOuro: {jogador.ouro}\n\n");
-            
+
             // Mostra as opções do menu
             Console.WriteLine("Escolha sua ação:");
             Console.WriteLine("1 - Atacar");
-            Console.WriteLine("2 - Defender");
+            Console.WriteLine("2 - Dodge");
             Console.WriteLine("3 - Fugir");
             Console.Write("Opção: ");
 
@@ -24,7 +24,7 @@ class Batalhar
                 acaoJogador = Console.ReadLine()!;
                 if (acaoJogador != "1" && acaoJogador != "2" && acaoJogador != "3")
                 {
-                    Console.WriteLine("Opção inválida. Por favor, escolha 1 para atacar, 2 para defender ou 3 para fugir.");
+                    Console.WriteLine("Opção inválida. Por favor, escolha 1 para atacar, 2 para tentar dodge ou 3 para fugir.");
                     Console.Write("Opção: ");
                 }
             } while (acaoJogador != "1" && acaoJogador != "2" && acaoJogador != "3");
@@ -46,7 +46,7 @@ class Batalhar
             string[] acoesMonstro = { "atacar", "defender" };
             string acaoMonstro = acoesMonstro[random.Next(acoesMonstro.Length)];
 
-            bool critico = random.NextDouble() < 0.1; // 10% de chance de acerto crítico
+            bool critico = random.NextDouble() < 0.3; // 30% de chance de acerto crítico
 
             if (acaoJogador == "1") // Ataque
             {
@@ -67,17 +67,27 @@ class Batalhar
                     monstro.hp -= dano;
                 }
             }
-            else if (acaoJogador == "2") // Defesa
+            else if (acaoJogador == "2") // Dodge
             {
                 if (acaoMonstro == "atacar")
                 {
-                    int dano = CalcularDano(jogador, monstro);
-                    Console.WriteLine($"{monstro.nome} te atacou, mas você se defendeu e recebeu apenas {dano} de dano.");
-                    jogador.hp -= dano;
+                    if (random.NextDouble() > 0.7) // 30% de chance de dodge bem-sucedida
+                    {
+                        int dano = CalcularDano(jogador, monstro, critico);
+                        Console.WriteLine($"{monstro.nome} te atacou, mas você o atordoou e causou {dano} de dano ao {monstro.nome}.");
+                        monstro.hp -= dano;
+                        return;
+                    }
+                    else
+                    {
+                        int dano = CalcularDano(jogador, monstro);
+                        Console.WriteLine($"{monstro.nome} te atacou, mas você errou o atordoamento e recebeu {dano} de dano.");
+                        jogador.hp -= dano;
+                    }
                 }
-                else // Ambos defendem
+                else // Monstro de defende
                 {
-                    Console.WriteLine("Ambos escolheram se defender, nada aconteceu!");
+                    Console.WriteLine($"{monstro.nome} se defende de seu atordoamento");
                 }
             }
 
