@@ -1,0 +1,14 @@
+/home/emmanuel/Documentos/teste_c#/Parte_1/bin/Debug/net8.0/Parte_1
+/home/emmanuel/Documentos/teste_c#/Parte_1/bin/Debug/net8.0/Parte_1.deps.json
+/home/emmanuel/Documentos/teste_c#/Parte_1/bin/Debug/net8.0/Parte_1.runtimeconfig.json
+/home/emmanuel/Documentos/teste_c#/Parte_1/bin/Debug/net8.0/Parte_1.dll
+/home/emmanuel/Documentos/teste_c#/Parte_1/bin/Debug/net8.0/Parte_1.pdb
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/Parte_1.GeneratedMSBuildEditorConfig.editorconfig
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/Parte_1.AssemblyInfoInputs.cache
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/Parte_1.AssemblyInfo.cs
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/Parte_1.csproj.CoreCompileInputs.cache
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/Parte_1.dll
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/refint/Parte_1.dll
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/Parte_1.pdb
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/Parte_1.genruntimeconfig.cache
+/home/emmanuel/Documentos/teste_c#/Parte_1/obj/Debug/net8.0/ref/Parte_1.dll

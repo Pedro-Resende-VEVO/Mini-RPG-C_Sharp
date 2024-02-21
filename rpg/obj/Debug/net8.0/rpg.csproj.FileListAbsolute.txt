@@ -1,0 +1,14 @@
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.GeneratedMSBuildEditorConfig.editorconfig
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.AssemblyInfoInputs.cache
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.AssemblyInfo.cs
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.csproj.CoreCompileInputs.cache
+/home/emmanuel/Documentos/teste_c#/rpg/bin/Debug/net8.0/rpg
+/home/emmanuel/Documentos/teste_c#/rpg/bin/Debug/net8.0/rpg.deps.json
+/home/emmanuel/Documentos/teste_c#/rpg/bin/Debug/net8.0/rpg.runtimeconfig.json
+/home/emmanuel/Documentos/teste_c#/rpg/bin/Debug/net8.0/rpg.dll
+/home/emmanuel/Documentos/teste_c#/rpg/bin/Debug/net8.0/rpg.pdb
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.dll
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/refint/rpg.dll
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.pdb
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/rpg.genruntimeconfig.cache
+/home/emmanuel/Documentos/teste_c#/rpg/obj/Debug/net8.0/ref/rpg.dll
