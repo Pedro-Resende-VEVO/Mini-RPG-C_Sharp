@@ -56,18 +56,8 @@ class Jogo
                             ExibirStatusDoJogador(jogador);
                         }
                     }
-
-                    if (lugarEscolhido.nome == "Área do Boss")
-                    {
-                        lugarEscolhido.Boss(jogador);
-                        jogoAtivo = false;
-                    }
-                    else
-                    {
-                        lugarEscolhido.Missao(jogador);
-                        terrenos.Remove(lugarEscolhido); //Remove o lugar já passado da lista
-                    }
-
+                    lugarEscolhido.Missao(jogador);
+                    terrenos.Remove(lugarEscolhido); //Remove o lugar já passado da lista TESTE
                 }
                 else if (escolha == terrenos.Count + 1)
                 {
