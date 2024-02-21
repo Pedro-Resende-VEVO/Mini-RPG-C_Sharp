@@ -1,4 +1,4 @@
-#Mudanças:
+# Mudanças:
 
     Valor do crítico;
     Habilidade de Dodge;
