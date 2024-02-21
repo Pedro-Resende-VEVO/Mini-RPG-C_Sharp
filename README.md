@@ -11,3 +11,5 @@ Mudanças:
     Chance menor de monstro aparecer na transição de caminhos;
     Fazer Boss aparecer só no cenário final;
     Permitir finalização do jogo após derrotar o Boss.
+
+    teste
